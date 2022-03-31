@@ -11,6 +11,12 @@ public class ProductEntity {
     private String title;
     private String description;
 
+
+
+    @ManyToOne
+    @JoinColumn(name = "user_id")
+    private UserEntity user;
+
     public ProductEntity(){
 
     }
@@ -37,5 +43,13 @@ public class ProductEntity {
 
     public void setDescription(String description) {
         this.description = description;
+    }
+
+    public UserEntity getUser() {
+        return user;
+    }
+
+    public void setUser(UserEntity user) {
+        this.user = user;
     }
 }

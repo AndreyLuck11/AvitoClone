@@ -10,8 +10,8 @@ public class Product {
 
     public  static  Product toModel(ProductEntity entity){
         Product model = new Product();
-        model.setDescription(entity.getDescription());
         model.setId(entity.getId());
+        model.setDescription(entity.getDescription());
         model.setTitle(entity.getTitle());
         return model;
     }

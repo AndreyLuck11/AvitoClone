@@ -12,6 +12,8 @@ public class UserEntity {
     private String username;
     private String password;
 
+    @OneToMany(cascade = CascadeType.ALL, mappedBy = "user")
+    private  List<ProductEntity> product;
 
     public UserEntity( ) {
 
@@ -39,5 +41,13 @@ public class UserEntity {
 
     public void setPassword(String password) {
         this.password = password;
+    }
+
+    public List<ProductEntity> getProduct() {
+        return product;
+    }
+
+    public void setProduct(List<ProductEntity> product) {
+        this.product = product;
     }
 }
