@@ -1,6 +1,7 @@
 package com.example.avitoclone.entity;
 
 import javax.persistence.*;
+import java.util.List;
 
 @Entity
 @Table(name = "product")
@@ -11,7 +12,8 @@ public class ProductEntity {
     private String title;
     private String description;
 
-
+    @OneToMany(cascade = CascadeType.ALL, mappedBy = "product")
+    private List<ImageEntity> image;
 
     @ManyToOne
     @JoinColumn(name = "user_id")
