@@ -2,6 +2,7 @@ package com.example.avitoclone.controller;
 
 import com.example.avitoclone.entity.ImageEntity;
 import com.example.avitoclone.entity.ProductEntity;
+import com.example.avitoclone.model.Image;
 import com.example.avitoclone.repository.ImageRepo;
 import com.example.avitoclone.repository.ProductRepo;
 import com.example.avitoclone.service.ImageService;
@@ -35,11 +36,12 @@ public class ImageController {
 
 
         ProductEntity product = productRepo.findById(productId).get();
+        Image.toModel(
         imageRepo.save(ImageEntity.builder()
                 .name(file.getOriginalFilename())
                 .type(file.getContentType())
                 .image(ImageUtility.compressImage(file.getBytes())).product(product)
-                .build());
+                .build()));
 
 
 //        imageRepo.save(ImageEntity.builder().product(product).build());

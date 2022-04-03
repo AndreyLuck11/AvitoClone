@@ -23,6 +23,14 @@ public class ProductEntity {
 
     }
 
+    public List<ImageEntity> getImage() {
+        return image;
+    }
+
+    public void setImage(List<ImageEntity> image) {
+        this.image = image;
+    }
+
     public Long getId() {
         return id;
     }
