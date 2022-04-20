@@ -1,7 +1,9 @@
 package com.example.avitoclone.model;
 
+import com.example.avitoclone.entity.ImageEntity;
 import com.example.avitoclone.entity.ProductEntity;
 
+import javax.persistence.Id;
 import java.util.List;
 import java.util.stream.Collectors;
 

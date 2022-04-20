@@ -19,10 +19,10 @@ public class ProductController {
     private ProductService productService;
 
     @PostMapping
-    public ResponseEntity registration(@RequestBody ProductEntity product, @RequestParam Long userId) {
+    public ResponseEntity registration(@RequestBody ProductEntity product, @RequestParam Long userId, @RequestParam Long categoryId) {
         try {
 
-            return ResponseEntity.ok(productService.registration(product, userId));
+            return ResponseEntity.ok(productService.registration(product, userId, categoryId));
         } catch (Exception e) {
             return ResponseEntity.badRequest().body("Произошла ошибка");
         }

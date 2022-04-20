@@ -14,7 +14,7 @@ public class ImageService {
     @Autowired
     private ProductRepo productRepo;
 
-    public ImageEntity setProdId(ImageEntity image, Long productId){
+    public ImageEntity getProdId(ImageEntity image, Long productId){
         ProductEntity product = productRepo.findById(productId).get();
         image.setProduct(product);
         return imageRepo.save(image);
